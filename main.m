@@ -11,9 +11,13 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         // insert code here...
-        while(true) {
         char inputChars[255];
+        char inputNum[255];
         
+        while(true) {
+            NSLog(@"Input a number from 1-6");
+            fgets(inputNum, 255, stdin);
+       
         printf("input a string: ");
         fgets(inputChars, 255, stdin); //places limit 255 characters
         
@@ -24,7 +28,8 @@ int main(int argc, const char * argv[]) {
         
         //print NSString object
         NSLog(@"Input was: %@", inputString);
-    }
+    
     return 0;
     }
+}
 }
