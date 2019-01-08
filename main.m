@@ -36,24 +36,25 @@ int main(int argc, const char * argv[]) {
             
             // if number is 3, convert string into number
             } else if ([integer isEqual:@3]) {
-                NSNumber *convert = @([scannedChar intValue]);
-                NSString *convertBack = [NSString stringWithFormat:@"%@",convert];
-              //  NSString *newConvertBack =
-                NSLog(@"convertback = %@", convertBack);
                 
-                if([convertBack isNotEqualTo:convert]) {
-                    NSLog(@"can't successfully convert");
-                }
+                NSNumber *convert = @([scannedChar intValue]);
+                if ([convert isEqual:@"0"]) {
+                    if ([scannedChar isEqual:@0]) {
+                        NSLog(@"value is 0");
+                    } else {
+                        NSLog(@"unsuccessful");}
                     
-                else { NSLog(@"number is %@\n", convert);
-            }
-            
+                } else { NSLog(@"value is: %@",convert);
+                        
+                    }
+                
             // add ", eh?" to the end of a string
             } else if ([integer isEqual:@4]) {
                 NSString *newString = [scannedChar substringToIndex:[scannedChar length]-1];
                 NSString *appendString = [newString stringByAppendingString:@",eh?"];
                 NSLog(@"the resulting string is %@\n",appendString); //why does it print ,eh line below?
-                
+            
+            // return "i don't know" for ? and "whoa calm down" for !
             } else if ([integer isEqual:@5]) {
                 NSString *lastChar = [scannedChar substringToIndex:[scannedChar length]-1];
                 NSString *lastLastChar = [lastChar substringFromIndex:[lastChar length]-1];
@@ -65,7 +66,7 @@ int main(int argc, const char * argv[]) {
                     NSLog(@"whoa, calm down!");
                 }
             
-            // 
+            // replace space with -
             } else if ([integer isEqual:@6]) {
                 NSString *replaceSpace = [scannedChar stringByReplacingOccurrencesOfString:@" " withString:@"-"];
                 NSLog(@"new string is: %@",replaceSpace);
